@@ -40,6 +40,7 @@ public class RentalPage extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         d_id = new javax.swing.JTextField();
         Confirm = new java.awt.Checkbox();
+        d2 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -137,7 +138,11 @@ public class RentalPage extends javax.swing.JFrame {
                                 .addComponent(av, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Confirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(Confirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(d2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(48, 48, 48))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(242, 242, 242)
                         .addComponent(jButton1)
@@ -172,7 +177,9 @@ public class RentalPage extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(av, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(d2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(R_fee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -225,17 +232,20 @@ public class RentalPage extends javax.swing.JFrame {
             {
             Class.forName("com.mysql.jdbc.Driver");
             java.sql.Connection con = java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "");
-            String sql = "Insert into rentalpage(Device_Id,Device_Name,Student_ID,Student_Name,Rental_Fee,Rent_Time,Rent_Date) values (?,?,?,?,?,?,?)";
+            String sql = "Insert into rentalpage(Device_Id,Device_Name,Student_ID,Student_Name,Rental_Fee,Issued_Date) values (?,?,?,?,?,?)";
             PreparedStatement pst = con.prepareStatement(sql);
             pst.setString(1, d_id.getText());
             pst.setString(2, d_name.getSelectedItem().toString());
             pst.setString(3, S_id.getText());
             pst.setString(4, S_name.getText());
             pst.setString(5, R_fee.getText());
-            pst.setString(6, R_time.getText());
-            pst.setString(7, Date.getDate().toLocaleString());
+            //pst.setString(6, R_time.getText());
+            pst.setString(6, Date.getDate().toLocaleString());
             //Date.getDate().toString(),
             //Date.getDate().toGMTString()
+            int d = Date.getDate().getDay();
+            int d1 = d2.getDate().getDay();
+            System.out.print("Date = "+d+"\nDate2 = "+d1);
             pst.executeUpdate();
             d_id.setText("");
             R_time.setText("");
@@ -353,6 +363,7 @@ public class RentalPage extends javax.swing.JFrame {
     private javax.swing.JTextField S_id;
     private javax.swing.JTextField S_name;
     private javax.swing.JTextField av;
+    private com.toedter.calendar.JDateChooser d2;
     private javax.swing.JTextField d_id;
     private javax.swing.JComboBox<String> d_name;
     private javax.swing.JButton jButton1;

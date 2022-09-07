@@ -48,7 +48,7 @@ public class History extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Device Id", "Device Name", "Student Id", "Student Name", "Rental Fee", "Rent Time", "Return Time"
+                "Device Id", "Device Name", "Student Id", "Student Name", "Rental Fee", "Issued Date", "Return Date"
             }
         ) {
             Class[] types = new Class [] {
@@ -132,7 +132,7 @@ public class History extends javax.swing.JFrame {
         {
             Class.forName("com.mysql.jdbc.Driver");
             java.sql.Connection con = java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "");
-            table.setModel(new DefaultTableModel(null,new String[]{"Device Id","Device Name","Student Id","Student Name","Rental Fee","Rent Time","Return Time"}));
+            table.setModel(new DefaultTableModel(null,new String[]{"Device Id","Device Name","Student Id","Student Name","Rental Fee","Issued Date","Return Date"}));
             String sql = "Select * from device_return where device_id =?";
             PreparedStatement pst = con.prepareStatement(sql);
             pst.setString(1, d_id.getText());
@@ -145,8 +145,8 @@ public class History extends javax.swing.JFrame {
                 String sid = rs.getString("Student_id");
                 String sname = rs.getString("Student_name");
                 String rfee = rs.getString("Rental_Fee");
-                String rtime = rs.getString("Rent_time");
-                String retime = rs.getString("Return_Time");
+                String rtime = rs.getString("Issued_Date");
+                String retime = rs.getString("Return_Date");
                 String tbData[]={did,dname,sid,sname,rfee,rtime,retime};
                 tblModel = (DefaultTableModel)table.getModel();
                 tblModel.addRow(tbData);

@@ -81,6 +81,11 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="Confirm" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="d2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -128,6 +133,8 @@
                               <Component id="av" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="d2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="1" attributes="0">
@@ -271,6 +278,8 @@
           <Properties>
             <Property name="label" type="java.lang.String" value="Confirm"/>
           </Properties>
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="d2">
         </Component>
       </SubComponents>
     </Container>

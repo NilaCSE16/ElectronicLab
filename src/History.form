@@ -99,8 +99,8 @@
                     <Column editable="true" title="Student Id" type="java.lang.String"/>
                     <Column editable="true" title="Student Name" type="java.lang.String"/>
                     <Column editable="true" title="Rental Fee" type="java.lang.String"/>
-                    <Column editable="true" title="Rent Time" type="java.lang.String"/>
-                    <Column editable="true" title="Return Time" type="java.lang.String"/>
+                    <Column editable="true" title="Issued Date" type="java.lang.String"/>
+                    <Column editable="true" title="Return Date" type="java.lang.String"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
