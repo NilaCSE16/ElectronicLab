@@ -146,29 +146,37 @@ public class Register extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        try
-        {
-            Class.forName("com.mysql.jdbc.Driver");
-            java.sql.Connection con = java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "");
-            String sql = "Insert into registrationform(id,email,username,password) values (?,?,?,?)";
-            PreparedStatement pst = con.prepareStatement(sql);
-            pst.setString(1, uid.getText());
-            pst.setString(2, email.getText());
-            pst.setString(3, username1.getText());
-            pst.setString(4, password1.getText());
-            pst.executeUpdate();
-            username1.setText("");
-            password1.setText("");
-            JOptionPane.showMessageDialog(null, "Insertion Successful");
-            MenuPage menu = new MenuPage();
-            menu.setVisible(true);
-            setVisible(false);
-            con.close();
+        String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+        String str = email.getText();
+        if(str.matches(EMAIL_REGEX)){
+            try
+            {
+                Class.forName("com.mysql.jdbc.Driver");
+                java.sql.Connection con = java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "");
+                String sql = "Insert into registrationform(id,email,username,password) values (?,?,?,?)";
+                PreparedStatement pst = con.prepareStatement(sql);
+                pst.setString(1, uid.getText());
+                pst.setString(2, email.getText());
+                pst.setString(3, username1.getText());
+                pst.setString(4, password1.getText());
+                pst.executeUpdate();
+                username1.setText("");
+                password1.setText("");
+                JOptionPane.showMessageDialog(null, "Insertion Successful");
+                MenuPage menu = new MenuPage();
+                menu.setVisible(true);
+                setVisible(false);
+                con.close();
             //Connection con = DriverManager.getConnection("jbdc:mysql://localhost:3306/testdb", "root", "");
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
         }
-        catch(Exception e)
+        else
         {
-            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null, "Please write valid email address");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
