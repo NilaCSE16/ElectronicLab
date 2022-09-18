@@ -36,7 +36,7 @@ public class DeviceRegistration extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         d_name = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        rfee = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,7 +83,7 @@ public class DeviceRegistration extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
+                            .addComponent(rfee)
                             .addComponent(d_id)
                             .addComponent(d_name, 0, 200, Short.MAX_VALUE))))
                 .addContainerGap(200, Short.MAX_VALUE))
@@ -101,7 +101,7 @@ public class DeviceRegistration extends javax.swing.JFrame {
                     .addComponent(d_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rfee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -130,12 +130,14 @@ public class DeviceRegistration extends javax.swing.JFrame {
         {
             Class.forName("com.mysql.jdbc.Driver");
             java.sql.Connection con = java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "");
-            String sql = "Insert into device_register(Device_Id,Device_Name) values (?,?)";
+            String sql = "Insert into device_register(Device_Id,Device_Name,Rental_fee) values (?,?,?)";
             PreparedStatement pst = con.prepareStatement(sql);
             pst.setString(1, d_id.getText());
             pst.setString(2, d_name.getSelectedItem().toString());
+            pst.setString(3, rfee.getText());
             pst.executeUpdate();
             d_id.setText("");
+            rfee.setText("");
             JOptionPane.showMessageDialog(null, "Registration Successful");
             con.close();
             //Connection con = DriverManager.getConnection("jbdc:mysql://localhost:3306/testdb", "root", "");
@@ -197,6 +199,6 @@ public class DeviceRegistration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField rfee;
     // End of variables declaration//GEN-END:variables
 }
