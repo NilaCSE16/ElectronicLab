@@ -32,14 +32,14 @@ public class DeviceReturn extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         d_id = new javax.swing.JTextField();
         s_id = new javax.swing.JTextField();
-        r_time = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         date = new com.toedter.calendar.JDateChooser();
         jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        Fine = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,8 +48,6 @@ public class DeviceReturn extends javax.swing.JFrame {
         jLabel1.setText("Device Id");
 
         jLabel2.setText("Student Id");
-
-        jLabel3.setText("Return Time");
 
         jButton1.setText("OK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -73,32 +71,35 @@ public class DeviceReturn extends javax.swing.JFrame {
 
         jLabel4.setText("Return Date");
 
+        jLabel3.setText("Fine");
+
+        Fine.setEditable(false);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel4))
-                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                                .addComponent(jButton2))
-                            .addComponent(d_id)
-                            .addComponent(s_id)
-                            .addComponent(r_time))
-                        .addGap(216, 216, 216))
+                        .addGap(183, 183, 183)
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(64, 64, 64)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel4))
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fine, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(s_id, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(d_id, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,23 +108,23 @@ public class DeviceReturn extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(d_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(s_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(r_time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(46, 46, 46)
+                .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addGap(22, 22, 22)
+                .addGap(31, 31, 31)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(s_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(Fine, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addGap(40, 40, 40))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -150,11 +151,8 @@ public class DeviceReturn extends javax.swing.JFrame {
             PreparedStatement pst = con.prepareStatement(sql);
             pst.setString(1, d_id.getText());
             pst.executeUpdate();
-            
             String sql1="Update Device_Return set Return_Date=? where Device_Id=? and Student_Id=?";
             PreparedStatement pst1 = con.prepareStatement(sql1);
-            //pst1.setString(1, r_time.getText());
-            //pst1.setString(2, s_id.getText());
             pst1.setString(1, date.getDate().toLocaleString());
             pst1.setString(2, d_id.getText());
             pst1.setString(3, s_id.getText());
@@ -163,9 +161,39 @@ public class DeviceReturn extends javax.swing.JFrame {
             PreparedStatement ps = con.prepareStatement(str);
             ps.setString(1, d_id.getText());
             ps.executeUpdate();
+            String sq = "Select * from device_return where device_id =?";
+            PreparedStatement p = con.prepareStatement(sq);
+            p.setString(1, d_id.getText());
+            ResultSet rs = p.executeQuery();
+            String did = "",rid="";
+            while(rs.next())
+            {
+                did = rs.getString("Issued_Date");
+                rid = rs.getString("Return_Date");
+            }
+            String s = did.substring(0, 11);
+            String r = rid.substring(0, 11);
+            //int fine;
+            
+            if(s.equals(r))
+            {
+                Fine.setText("0");
+            }
+            else
+            {
+                Fine.setText("50");
+            }
+            String s1="Update Device_Return set Fine=? where Device_Id=? and Student_Id=?";
+            PreparedStatement p1 = con.prepareStatement(s1);
+            p1.setString(1, Fine.getText());
+            p1.setString(2, d_id.getText());
+            p1.setString(3, s_id.getText());
+            p1.executeUpdate();
+            //int d  = Integer.parseInt(did) ;
+            System.out.print("Date = "+Fine.getText());
             d_id.setText("");           
             s_id.setText("");
-            r_time.setText("");
+            date.cleanup();
         }
         catch(Exception e)
         {
@@ -182,7 +210,13 @@ public class DeviceReturn extends javax.swing.JFrame {
 
     private void s_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s_idActionPerformed
         // TODO add your handling code here:
-        
+        try
+        {
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_s_idActionPerformed
 
     /**
@@ -221,6 +255,7 @@ public class DeviceReturn extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Fine;
     private javax.swing.JTextField d_id;
     private com.toedter.calendar.JDateChooser date;
     private javax.swing.JButton jButton1;
@@ -230,7 +265,6 @@ public class DeviceReturn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField r_time;
     private javax.swing.JTextField s_id;
     // End of variables declaration//GEN-END:variables
 }

@@ -44,6 +44,11 @@ public class Admin1 extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(255, 0, 102));
         jButton2.setText("Monitor");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(204, 0, 153));
         jButton3.setText("Log out");
@@ -104,6 +109,13 @@ public class Admin1 extends javax.swing.JFrame {
         f.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Monitor f = new Monitor();
+        f.setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

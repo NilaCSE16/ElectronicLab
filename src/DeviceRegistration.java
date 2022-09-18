@@ -148,7 +148,7 @@ public class DeviceRegistration extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        MenuPage rgs = new MenuPage();
+        Admin1 rgs = new Admin1();
         rgs.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
